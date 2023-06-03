@@ -8,6 +8,7 @@ def home(request):
 
 
 def contacts(request):
+    templates = 'catalog/contacts.html'
     if request.method == 'POST':
         name = request.POST.get('name')
         phone = request.POST.get('phone')
@@ -16,4 +17,4 @@ def contacts(request):
 
         save_contact_data(name, phone, message)
 
-    return render(request, 'catalog/contacts.html')
+    return render(request, templates)
